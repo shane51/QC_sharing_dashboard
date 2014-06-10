@@ -1,0 +1,33 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>VM Plan</h1>
+<table>
+<% @vms.each do |vm| %>
+<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+	<td class="list_ip">
+		<a href="http://<%= vm.ip %>/ibmcognos" target="_blank"><%= vm.ip %></a>
+	</td>
+	<td class="list_description">
+		<dl>
+			<dt>User: <%= vm.user %></dt>
+			<dd><p><%= sanitize(vm.description) %></p></dd>
+		</dl>
+	</td>
+	<td class="list_description">
+		<dl>
+			<dt>Ocuppy Period:</dt>
+			<dd><p><%= vm.period %></p></dd>
+		</dl>
+	</td>
+	<td class="list_description">
+		<dl>
+			<dt>Build:</dt>
+			<dd><p><%= vm.build %></p></dd>
+		</dl>
+	</td>
+</tr>
+
+<% end %>
+</table>

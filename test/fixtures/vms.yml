@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ip: MyString
+  description: MyText
+  user: MyString
+  period: MyText
+
+two:
+  ip: MyString
+  description: MyText
+  user: MyString
+  period: MyText

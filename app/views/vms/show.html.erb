@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @vm.ip %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @vm.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @vm.user %>
+</p>
+
+<p>
+  <strong>Period:</strong>
+  <%= @vm.period %>
+</p>
+
+<p>
+  <strong>Build:</strong>
+  <%= @vm.build %>
+</p>
+
+<%= link_to 'Edit', edit_vm_path(@vm) %> |
+<%= link_to 'Back', vms_path %>

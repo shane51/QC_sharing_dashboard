@@ -1,0 +1,26 @@
+<%= form_for(@pdfview) do |f| %>
+  <% if @pdfview.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pdfview.errors.count, "error") %> prohibited this pdfview from being saved:</h2>
+
+      <ul>
+      <% @pdfview.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Doc Path" %><br>
+    <%= f.file_field :path %>
+  </div>
+
+  <div class="field">
+    <%= f.label :doctype %><br>
+    <%= f.select :doctype,  Pdfview::DOC_CATAGORY, prompt: 'Select a Doc catagory'  %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

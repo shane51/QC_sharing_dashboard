@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pdfview.name %>
+</p>
+
+<p>
+  <strong>Path:</strong>
+  <%= @pdfview.path %>
+</p>
+
+<p>
+  <strong>Doctype:</strong>
+  <%= @pdfview.doctype %>
+</p>
+
+<%= link_to 'Edit', edit_pdfview_path(@pdfview) %> |
+<%= link_to 'Back', pdfviews_path %>

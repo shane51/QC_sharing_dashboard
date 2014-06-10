@@ -1,0 +1,2 @@
+module PdfviewsHelper
+end

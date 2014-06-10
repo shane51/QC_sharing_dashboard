@@ -1,0 +1,16 @@
+<h1>Links list</h1>
+
+
+
+<table width="400">
+<% @links.each do |link| %>
+<tr>
+	<td>
+		<p><%= link.catgory %></p>
+	</td>
+	<td class="list_link">
+	 <a href="<%= link.address %>" target="_blank"><%= link.name %></a>
+	</td>
+</tr>
+<% end %>
+</table>

@@ -1,0 +1,29 @@
+<h1>Listing pdfviews</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Path</th>
+      <th>Doctype</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pdfviews.each do |pdfview| %>
+      <tr>
+        <td><%= pdfview.name %></td>
+        <td><%= pdfview.path %></td>
+        <td><%= pdfview.doctype %></td>
+        <td><%= link_to 'Show', pdfview %></td>
+        <td><%= link_to 'Edit', edit_pdfview_path(pdfview) %></td>
+        <td><%= link_to 'Destroy', pdfview, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Docs', new_pdfview_path %>

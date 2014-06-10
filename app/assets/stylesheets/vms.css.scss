@@ -1,0 +1,51 @@
+// Place all the styles related to the vms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.vms {
+	table {
+		border-collapse: collapse;
+	}
+	
+	table tr td {
+		padding: 5px;
+		vertical-align: center;
+	}
+	
+	.list_ip {
+		font-weight: bold;
+		text-align: right;
+	}
+	
+	.list_description {
+		width: 40%;
+		text-align: center;
+		dl {
+			margin: 0;
+		}
+		
+		dt {
+			color: #244;
+			font-weight: bold;
+			font-size: larger;
+		}
+		
+		dd {
+		 margin: 0;
+		}
+	}
+	
+	.list_actions {
+		font-size: x-small;
+		text-align: right;
+		padding-left: 1em;
+	}
+	
+	.list_line_even {
+		background: #FFFFFF
+	}
+	
+	.list_line_odd {
+		background: #bebebe
+	}
+	
+}
