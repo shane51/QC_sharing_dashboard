@@ -26,12 +26,18 @@ class PdfviewsController < ApplicationController
   
   def create
     @pdfview = Pdfview.new(pdfview_params)
-	upload
+	
+	uploaded_io = params[:pdfview][:path]
+	@filename = uploaded_io.original_filename
+	
 	@pdfview.name = @filename.gsub(".pdf", "")
 	@pdfview.path = "#{Rails.root}/public/uploads/" + @filename
 
     respond_to do |format|
       if @pdfview.save
+		File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+			file.write(uploaded_io.read)
+		end
         format.html { redirect_to @pdfview, notice: 'Pdfview was successfully created.' }
         format.json { render :show, status: :created, location: @pdfview }
       else
@@ -39,6 +45,8 @@ class PdfviewsController < ApplicationController
         format.json { render json: @pdfview.errors, status: :unprocessable_entity }
       end
     end
+	
+	
   end
 
   # PATCH/PUT /pdfviews/1
@@ -66,11 +74,7 @@ class PdfviewsController < ApplicationController
   end
   
   def upload
-	uploaded_io = params[:pdfview][:path]
-	@filename = uploaded_io.original_filename
-	File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-		file.write(uploaded_io.read)
-	end
+	
   end
  
   

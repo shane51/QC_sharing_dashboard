@@ -5,25 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
-<body class='<%= controller.controller_name %>'>
-	<div id="banner">
-		<%= image_tag("cognos_logo.png") %>
-		<%= @page_title || "Cognos QC share dashboard" %>
-	</div>
-	<div id="columns">
-		<div id="side">
-			<ul>
-				<li><%= link_to 'Home', portal_path %></li>
-				<li><%= link_to 'Docs', previewpage_index_path %></li>
-				<li><%= link_to 'Links', linkpage_index_path %></li>
-				<li><a href="#Contacts">Contacts</a></li>
-				<li><%= link_to 'Admin', adminpage_index_path %></li>
-			</ul>
-		</div>
-		<div id="main">
-			<%= yield %>
-		</div>
-	</div>
+<body class="<%= controller.controller_name %>">
+  <%= render 'layouts/header' %>
+  <div class="container">
+	<%= yield %>
+	<%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>
