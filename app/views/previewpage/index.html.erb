@@ -2,13 +2,21 @@
 <p>It's better to use Chrome or IE10</p>
 <p>In order to make sure you can Preview Doc on line(in FF, lower than FF24 or IE10 is NOT supportted), Pls install PDF.js by just installing following plug in</p>
 <a href="https://addons.mozilla.org/zh-cn/firefox/addon/pdfjs/">PDF.js</a>
-<br>
+<br/>
+
+<% @pdf_groups.each do | doctype, pdfnames | %>
+<h3><%= doctype %></h3>
 <table width="600">
-<% @pdfnames.each do |pdf| %>
-	<tr>
-		<td><p><%= pdf.doctype %>:</p></td>
-		<td><%= link_to "#{pdf.name}", "/uploads/#{pdf.name}.pdf",  :target => "_blank" %></td>	
+<% pdfnames.each do |pdf| %>
+<tr>
+		<td>
+			<%= pdf.doctype %>:
+		</td>
+		<td>
+			<%= link_to "#{pdf.name}", "/uploads/#{pdf.name}.pdf",  :target => "_blank" %>
+		</td>	
 	</tr>
 <% end %>
 </table>
+<% end %>
 

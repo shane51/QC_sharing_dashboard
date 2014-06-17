@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :pdfviews
 
   get 'previewpage/index'
-  
+  get 'previewpage/show'
   
   get 'adminpage/index'
 
