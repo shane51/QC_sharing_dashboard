@@ -1,6 +1,5 @@
 class PdfviewsController < ApplicationController
   before_action :set_pdfview, only: [:show, :edit, :update, :destroy]
-
   # GET /pdfviews
   # GET /pdfviews.json
   def index
@@ -10,6 +9,7 @@ class PdfviewsController < ApplicationController
   # GET /pdfviews/1
   # GET /pdfviews/1.json
   def show
+
   end
 
   # GET /pdfviews/new
@@ -23,6 +23,7 @@ class PdfviewsController < ApplicationController
 
   # POST /pdfviews
   # POST /pdfviews.json
+  
   
   def create
     @pdfview = Pdfview.new(pdfview_params)

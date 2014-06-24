@@ -1,7 +1,7 @@
 class PreviewpageController < ApplicationController
   def index
    @pdfnames=Pdfview.order(:doctype)
-   @pdf_groups=@pdfnames.group_by{ |pdf| pdf.doctype}
+   @pdf_groups=@pdfnames.group_by{ |pdf| pdf.doctype }
    
   end 
   
@@ -11,7 +11,4 @@ class PreviewpageController < ApplicationController
 	send_file(pdf_filename, :filename => @pdfname.name, :disposition => 'inline', :type => "application/pdf")
   end
   
-  def show
-		@pdf_recent_ten = Pdfview.order(:updated_at)[0..5]
-  end
 end

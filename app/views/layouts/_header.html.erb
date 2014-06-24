@@ -8,15 +8,13 @@
 			<li class="dropdown" >
 				<%= link_to "Docs", previewpage_index_path %>
 				<ul class="dropdown-menu">
-				  
+				  <%= render 'pdfviews/pdfrecent' %>
 				</ul>
 			</li>
 			<li class="dropdown" >
 				<%= link_to "Links", linkpage_index_path %>
 					<ul class="dropdown-menu">
-						<li><%= link_to "CQ", "https://cognoscq.ottawa.ibm.com/cqweb/", target: "_blank" %></li>
-						<li><%= link_to "Build Component List", "http://9.119.129.85:8080/cmplst.html", target: "_blank" %></li>
-						<li><%= link_to "IBM Sofware Download Page", "http://w3-103.ibm.com/software/xl/download/ticket.do", target: "_blank" %></li>
+						<%= render 'links/most_links' %>
 					</ul>
 			</li>
 				
@@ -24,10 +22,7 @@
 			<li class="dropdown">
 				<%= link_to "Admin", adminpage_index_path %>
 				<ul class="dropdown-menu">
-					<li><%= link_to 'Docs Upload', pdfviews_path %></li>
-					<li><%= link_to 'Add New Links', links_path %></li>
-					<li><a href="# Contacts">Add Contacts</a></li>
-					<li><%= link_to 'VM Managment', vms_path %></li>
+					<%= render 'adminpage/admin_options' %>
 				</ul>		
 			</li>
 		</ul>

@@ -6,4 +6,8 @@ class Pdfview < ActiveRecord::Base
 	}
 	DOC_CATAGORY = ["Automation", "Installation", " Product", "Feature", "Defect", "Mobile", "Others", "Tools"]
 	
+	def self.recent
+		order('updated_at DESC').limit(5)
+	end
+	
 end
