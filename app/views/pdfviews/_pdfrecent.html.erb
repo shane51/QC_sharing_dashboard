@@ -1,3 +1,5 @@
+<strong>&nbsp;&nbsp;&nbsp;&nbsp;The Recent 5 Docs:</strong>
+<hr id="hr_style">
 <% Pdfview.recent.each do |pdf| %>
   <li><%= link_to "#{pdf.name}", "/uploads/#{pdf.name}.pdf", target: "_blank" %></li>
 <% end %>
