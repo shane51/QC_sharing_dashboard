@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513010755) do
+ActiveRecord::Schema.define(version: 20140709094409) do
 
   create_table "docuploads", force: true do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20140513010755) do
     t.decimal  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "nav_flag"
   end
 
   create_table "pdfviews", force: true do |t|
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 20140513010755) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "build"
+    t.boolean  "vm_status"
   end
 
 end

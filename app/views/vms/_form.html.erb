@@ -16,6 +16,13 @@
     <%= f.text_field :ip %>
   </div>
   <div class="field">
+    <%= f.label :vm_status %>:<br>
+    <%= f.radio_button :vm_status, 'true' %>
+    <%= f.label :Runing %>
+    <%= f.radio_button :vm_status, 'false' %>
+    <%= f.label :Stopped %>
+  </div>
+  <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description, rows:8 %>
   </div>

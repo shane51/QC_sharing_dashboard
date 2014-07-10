@@ -23,7 +23,11 @@
     <%= f.label :address %><br>
     <%= f.text_field :address %>
   </div>
-
+  <div class="field">
+    <%= f.label 'Show on Dropdown list?' %><br>
+    <%= f.check_box :nav_flag, {}, 'on', 'off'%>
+     <%= f.label :on %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
