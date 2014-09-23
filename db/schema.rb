@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140709094409) do
+ActiveRecord::Schema.define(version: 20140923031017) do
+
+  create_table "contacts", force: true do |t|
+    t.string   "name"
+    t.text     "skill"
+    t.date     "birthday"
+    t.binary   "photo",      limit: 1048576
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "docuploads", force: true do |t|
     t.string   "name"
@@ -29,6 +38,18 @@ ActiveRecord::Schema.define(version: 20140709094409) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nav_flag"
+  end
+
+  create_table "memebers", force: true do |t|
+    t.string   "name"
+    t.string   "title"
+    t.date     "birthday"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo"
+    t.string   "notes"
+    t.string   "phone"
   end
 
   create_table "pdfviews", force: true do |t|
