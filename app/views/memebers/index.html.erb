@@ -1,0 +1,59 @@
+<h1>Cognos members</h1>
+<br>
+<table>
+ 
+    <% @memebers.each do |memeber| %>
+      <tr>
+        <div class="row">
+            <div class="col-md-2">
+                <div class="center">
+                  <%= image_tag(memeber.photo, class: 'img-circle') %>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                      <p class="text-center bg-primary "><%= memeber.name %></p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-center bg-success"><%= memeber.title %></p>
+                    </div>
+                </div>
+                
+
+           </div>
+           <div class="col-md-9">
+                <div class="row">
+                  <div class = "left">
+                  <p class="text-primary"><strong>SKILL: <%= memeber.description %></strong></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class = "left">
+                     <p class="text-muted"><strong>Notes:<%= memeber.notes %></strong></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class = "left">
+                    <p class="text-muted"><strong>Tel: <%= memeber.phone %></strong></p>
+                  </div>
+                </div>
+
+           </div>
+           <div class="col-md-1">
+             
+                    <div>
+                    <%= link_to 'Edit', edit_memeber_path(memeber) %>
+                    </div>
+              <% if admin? %>      
+                    <div>
+                    <%= link_to 'Destroy', memeber, method: :delete, data: { confirm: 'Are you sure?' } %>
+                    </div>
+             <% end %>
+           </div>
+        </div>
+      </tr>
+    <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Memeber', new_memeber_path %>

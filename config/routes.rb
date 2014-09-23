@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
+  resources :memebers
+
+  resources :contacts
+
   resources :pdfviews
 
   get 'previewpage/index'
 
-  
   get 'adminpage/index'
 
   get 'portal/index'
